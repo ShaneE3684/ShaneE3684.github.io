@@ -1,18 +1,72 @@
 h1
 {
+    font-size: xxx-large;
+    text-align: center;
     color: green;
+}
+
+.dropbtn
+{
+    background-color: green;
+    color: white;
+    padding: 20px;
+    font-size: medium;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown
+{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content
+{
+    display: none;
+    position: absolute ;
+    background-color: green;
+    box-shadow: 0px 8px 8px 0px darkgrey;
+    z-index: 1;
+}
+
+.dropdown-content a
+{
+    color: black;
+    padding: 20px 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {background-color: darkgreen;}
+
+.dropdown:hover .dropdown-content
+{
+    display: block;
 }
 
 table
 {
     border-collapse: collapse;
-    width: 90%;
-    margin: 5%;
+    margin: auto;
+
 }
 
 td
 {
-    border: 2px #000000 solid;
-    height: 50px;
+    border: 3px #000000 solid;
+    width: 10px;
+    height: 10px;
+    background-size: 100%;
+    background-image: url(https://us.123rf.com/450wm/pzaxe/pzaxe1204/pzaxe120400020/13043401-seamless-square-texture-wooden-floor.jpg?ver=6);
 }
 
+#mazeFloor
+{
+    background-image: url(https://us.123rf.com/450wm/pzaxe/pzaxe1204/pzaxe120400020/13043401-seamless-square-texture-wooden-floor.jpg?ver=6);
+}
+
+#mazeWall
+{
+    background-image: url(https://media.istockphoto.com/photos/texture-of-a-brick-wall-of-square-bricks-picture-id931400496?k=20&m=931400496&s=170667a&w=0&h=1YU-lf-_PCPc30NBcMABK2T1ZOi2d2PS4HtcsjuJHkM=);
+}
