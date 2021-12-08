@@ -1,6 +1,4 @@
-
-
-//Creating the maze
+//Creating the blank maze
 function creatNewMaze(mazeWidth, mazeHeight)
     {
       var rowIndex, colIndex;    
@@ -47,35 +45,55 @@ function creatNewMaze(mazeWidth, mazeHeight)
       table.appendChild(tbody);
 
       document.getElementById("maze_container").appendChild(table);
-    }
 
-//Moving through the maze  
-
-var exits = ["right", "right", "right", "right", "right", "right", "right", "right", "right", "bottom", "bottom", "bottom", "bottom", "bottom", "bottom", "bottom", "bottom", "bottom"];
-
-var currentCell;
-
-var rowIndex = 1;
-var colIndex = 1;
-
-for (exitIndex = 0; exitIndex < exits.length; exitIndex++) {
-
-    switch(exits[exitIndex]) {
-
-        case "right":
-
-            colIndex = colIndex + 1;
-            break;
-
-        case "bottom":
-
-            rowIndex = rowIndex + 1;
-            break;
-
-    }
-
-    currentCell = document.getElementById("cell_" + rowIndex + "_" + colIndex);
+    //Moving through the maze  
+    var exits = [];
     
-    currentCell.style.backgroundColor = "#f00000";
+    for (loop = 1; loop <= (mazeWidth + mazeHeight - 2); loop++)
+    {
+        exits.push("right");
+        exits.push("bottom");
+    }
 
+    var currentCell = document.getElementById("cell_1_1");
+
+    currentCell.style["border-top"] = "none";
+
+    var rowIndex = 1;
+    var colIndex = 1;
+
+    for (exitIndex = 0; exitIndex < exits.length; exitIndex++)
+    {
+
+        switch(exits[exitIndex])
+        {
+
+            case "right":
+                currentCell.style["border-right"] = "none";
+                colIndex = colIndex + 1;
+                break;
+
+            case "bottom":
+                currentCell.style["border-bottom"] = "none";
+                rowIndex = rowIndex + 1;
+                break;
+
+            
+        }
+
+        currentCell = document.getElementById("cell_"+rowIndex+"_"+colIndex);
+
+        switch(exits[exitIndex])
+        {
+            case "right":
+                currentCell.style["border-left"] = "none";
+                break;
+            case "bottom":
+                currentCell.style["border-top"] = "none";
+                break;
+        }
+        
+        currentCell.style.backgroundColor = "#f00000";
+
+    }
 }
