@@ -3,18 +3,32 @@
     <head>
       <title>The Labyrinth</title>
        <link rel= "stylesheet" type="text/css" href="Final_Project.css">
-       <script src= "Final_Project.js"></script>
+       <script src= "Final_Project.js"> </script>
     </head>
 
     <body>
-      
+      a = 0;
 
       <h1>The Labyrinth</h1>
-      <h2>Difficulty</h2>
-      <h2>Timer</h2>
-      <h2>Minimap Options</h2>
+      <div id = "Maze_Size">
+        <div class="dropdown">
+            <button class="dropbtn">Labyrinth Size</button>
+            <div class = "dropdown-content">
+                <input type = "button" onclick = "init();" value = "Start!">
+            </div>
+        </div>
+      </div>
+
+      <div class = "Timer">
+        
+      </div>
+
+      <div class = "MiniMap_Options">
+        
+      </div>
+
       <div id = "maze_container">
-      <input type = "button" onclick = "creatNewMaze(10,10);" value = "Start!">
+        <input type = "button" onclick = "init();" value = "Start!">
       </div>
       
     </body>
