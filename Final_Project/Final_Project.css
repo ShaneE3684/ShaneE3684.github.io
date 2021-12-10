@@ -23,11 +23,32 @@ h1
     padding: 2em;
 }
 
+#miniMap
+{
+
+    width: 10vh;
+    height: 10vh;
+    display: flex;
+    justify-content: right;
+}
+
 #maze_container
 {
     display: flex;
     justify-content: center;
     padding: 2em;
+}
+
+#StartButton
+{
+    display: flex;
+    justify-content: center;
+}
+
+input[type=button]
+{
+    background-color: darkgreen;
+    padding: 1em;
 }
 
 .dropbtn
@@ -36,7 +57,10 @@ h1
     background-color: green;
     color: white;
     padding: 20px;
-    margin: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 4em;
+    margin-right: 4em;
     font-size: medium;
     border: none;
     cursor: pointer;
@@ -51,9 +75,9 @@ h1
 .dropdown-content
 {
     display: none;
-    position: absolute ;
+    padding: 2px;
     background-color: green;
-    box-shadow: 0px 8px 8px 0px darkgrey;
+    box-shadow: 0px 8px 8px 0px black;
     z-index: 1;
 }
 
@@ -69,14 +93,13 @@ h1
 
 .dropdown:hover .dropdown-content
 {
-    display: block;
+    display:block;
 }
 
 table
 {
     border-collapse: collapse;
     margin: auto;
-
 }
 
 td
@@ -86,6 +109,13 @@ td
     height: 2vh;
     background-size: 100%;
     background-image: url(https://us.123rf.com/450wm/pzaxe/pzaxe1204/pzaxe120400020/13043401-seamless-square-texture-wooden-floor.jpg?ver=6);
+}
+
+#Stopwatch
+{
+    text-align: center;
+    text-shadow: black;
+    font-size: xxx-large;
 }
 
 #mazeFloor
