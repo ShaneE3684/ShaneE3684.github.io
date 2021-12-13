@@ -5,6 +5,7 @@
       <title>The Labyrinth</title>
        <link rel= "stylesheet" type="text/css" href="Final_Project.css">
        <script src= "Final_Project.js"> </script>
+       <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -17,14 +18,14 @@
             <div class="dropdown">
                 <button class="dropbtn">Labyrinth Size</button>
                 <div class = "dropdown-content">
-                    <input type = "button" onclick = "mazeWidth = 10, mazeHeight = 10;" value = "Small">
-                    <input type = "button" onclick = "mazeWidth = 20, mazeHeight = 20;" value = "Medium">
-                    <input type = "button" onclick = "mazeWidth = 30, mazeHeight = 30;" value = "Large">
+                    <input type = "button" onclick = "mazeWidth = 20, mazeHeight = 20;" value = "Small">
+                    <input type = "button" onclick = "mazeWidth = 40, mazeHeight = 40;" value = "Medium">
+                    <input type = "button" onclick = "mazeWidth = 60, mazeHeight = 60;" value = "Large">
                 </div>
             </div>
           </div>
 
-          <div id = "Timer" onchange="displayWatch();">
+          <!--<div id = "StopwatchDisplay" onchange="displayWatch();">
             <div class="dropdown">
               <button class="dropbtn">Stopwatch</button>
               <div class = "dropdown-content">
@@ -44,19 +45,26 @@
               </div>
           </div>
           </div>
-        </div> 
+        </div> -->
 
         <div id = "StartButton">
         <input type = "button" onclick = "init();" value = "Start!">
         </div>
 
-        <div id = "miniMap"></div>
-
         <div id = "maze_container"></div>
+
         
-        <div id="Stopwatch">
-          00:00:00
+        <div>
+            <table>
+                <td id = "mazeDisplay">
+
+                </td>
+            </table>
         </div>
+        
+        <!--<div id="Stopwatch">
+          00:00:00
+        </div>-->
       </body>
     </main>
 </html>
