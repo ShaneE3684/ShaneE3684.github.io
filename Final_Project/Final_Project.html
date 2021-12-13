@@ -11,7 +11,9 @@
     <body>
       <main>
 
-        <header><h1>The Labyrinth</h1></header>
+        <header><h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">The Labyrinth</h1></header>
+
+        <p style="text-align: center">Use the arrow keys to move.<br>Keep track of your position on the minimap.</p>
 
         <div id = "Menu">
           <div id = "Maze_Size">
@@ -34,7 +36,6 @@
               </div>
           </div>
           </div>
-
           <div id = "MiniMap_Options">
             <div class="dropdown">
               <button class="dropbtn">MiniMap</button>
@@ -51,14 +52,11 @@
         <input type = "button" onclick = "init();" value = "Start!">
         </div>
 
-        <div id = "maze_container"></div>
-
+        <div id = "maze_container" ></div>
         
         <div>
             <table>
-                <td id = "mazeDisplay">
-
-                </td>
+                <td id = "mazeDisplay" style="border: 2vh solid black;"> </td>
             </table>
         </div>
         
