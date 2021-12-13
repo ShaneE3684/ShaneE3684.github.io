@@ -312,14 +312,71 @@ function addCellID ()
 
     for (n = 1; n < (mazeWidth * mazeHeight) - 1; n++)
     {
-
-        var currentCell = document.getElementById("cell_" + startAtRow + "_" + startAtCol);
+        currentCell = document.getElementById("cell_" + startAtRow + "_" + startAtCol);
         
-        if (currentCell.getAttribute("border-top") == "true")
+        if (currentCell.style["border-top"] == "none" && currentCell.style["border-left"] == "none" && currentCell.style["border-right"] == "none" && currentCell.style["border-bottom"] == "none")
         {
+            currentCell.setAttribute("cellID", "15");
 
-            addRoute(startAtRow, startAtCol, true);
+        }else if (currentCell.style["border-top"] == "none" && currentCell.style["border-left"] == "none" && currentCell.style["border-right"] == "none")
+        {
+            currentCell.setAttribute("cellID", "14");
 
+        }else if (currentCell.style["border-top"] == "none" && currentCell.style["border-left"] == "none" && currentCell.style["border-bottom"] == "none")
+        {
+            currentCell.setAttribute("cellID", "13");
+
+        }else if (currentCell.style["border-top"] == "none" && currentCell.style["border-bottom"] == "none" && currentCell.style["border-right"] == "none")
+        {
+            currentCell.setAttribute("cellID", "12");
+
+        }else if (currentCell.style["border-bottom"] == "none" && currentCell.style["border-left"] == "none" && currentCell.style["border-right"] == "none")
+        {
+            currentCell.setAttribute("cellID", "11");
+
+        }else if (currentCell.style["border-top"] == "none" && currentCell.style["border-bottom"] == "none")
+        {
+            currentCell.setAttribute("cellID", "10");
+
+        }else if (currentCell.style["border-top"] == "none" && currentCell.style["border-bottom"] == "none")
+        {
+            currentCell.setAttribute("cellID", "9");
+
+        }else if (currentCell.style["border-top"] == "none" && currentCell.style["border-left"] == "none")
+        {
+            currentCell.setAttribute("cellID", "8");
+
+        }else if (currentCell.style["border-top"] == "none" && currentCell.style["border-right"] == "none")
+        {
+            currentCell.setAttribute("cellID", "7");
+
+        }else if (currentCell.style["border-bottom"] == "none" && currentCell.style["border-left"] == "none")
+        {
+            currentCell.setAttribute("cellID", "6");
+
+        }else if (currentCell.style["border-bottom"] == "none" && currentCell.style["border-right"] == "none")
+        {
+            currentCell.setAttribute("cellID", "5");
+
+        }else if (currentCell.style["border-top"] == "none")
+        {
+            currentCell.setAttribute("cellID", "4");
+
+        }else if (currentCell.style["border-bottom"] == "none")
+        {
+            currentCell.setAttribute("cellID", "3");
+
+        }else if (currentCell.style["border-left"] == "none")
+        {
+            currentCell.setAttribute("cellID", "2");
+
+        }else if (currentCell.style["border-right"] == "none")
+        {
+            currentCell.setAttribute("cellID", "1");
+
+        }else
+        {
+            currentCell.setAttribute("cellID", "0");
         }
 
         if (startAtCol == mazeWidth)
@@ -342,10 +399,102 @@ function gameDisplay()
 {
     var DisplayRowIndex = 1;
     var DisplayColIndex = 1;
-    var avatarPosition;
 
-    avatarPosition = $("#cell_" + DisplayRowIndex + "_" + DisplayColIndex).attr("style");
-    
+    if(DisplayRowIndex == 1 && DisplayColIndex == 1)
+    {
+        document.getElementById("mazeDisplay").style.borderTopColor = "red";
+    }
+
+    if(DisplayRowIndex == mazeWidth && DisplayColIndex == mazeHeight)
+    {
+        document.getElementById("mazeDisplay").style.borderBottomColor = "green";
+    }
+
+    var currentPosition = document.getElementById("cell_" + DisplayRowIndex + "_" + DisplayColIndex);
+
+    switch(currentPosition.getAttribute("cellID"))
+    {
+        case "15":
+            document.getElementById("mazeDisplay").style["borderTop"] = "none";
+            document.getElementById("mazeDisplay").style["borderBottom"] = "none";
+            document.getElementById("mazeDisplay").style["borderLeft"] = "none";
+            document.getElementById("mazeDisplay").style["borderRight"] = "none";
+            break;
+
+        case "14":
+            document.getElementById("mazeDisplay").style["border-top"] = "none";
+            document.getElementById("mazeDisplay").style["border-left"] = "none";
+            document.getElementById("mazeDisplay").style["border-right"] = "none";
+            break;
+
+        case "13":
+            document.getElementById("mazeDisplay").style["border-top"] = "none";
+            document.getElementById("mazeDisplay").style["border-bottom"] = "none";
+            document.getElementById("mazeDisplay").style["border-left"] = "none";
+            break;
+
+        case "12":
+            document.getElementById("mazeDisplay").style["border-top"] = "none";
+            document.getElementById("mazeDisplay").style["border-bottom"] = "none";
+            document.getElementById("mazeDisplay").style["border-right"] = "none";
+            break;
+
+        case "11":
+            document.getElementById("mazeDisplay").style["border-bottom"] = "none";
+            document.getElementById("mazeDisplay").style["border-left"] = "none";
+            document.getElementById("mazeDisplay").style["border-right"] = "none";
+            break;
+
+        case "10":
+            document.getElementById("mazeDisplay").style["border-top"] = "none";
+            document.getElementById("mazeDisplay").style["border-bottom"] = "none";
+            break;
+
+        case "9":
+            document.getElementById("mazeDisplay").style["border-left"] = "none";
+            document.getElementById("mazeDisplay").style["border-right"] = "none";
+            break;
+
+        case "8":
+            document.getElementById("mazeDisplay").style["border-top"] = "none";
+            document.getElementById("mazeDisplay").style["border-left"] = "none";
+            break;
+            
+        case "7":
+            document.getElementById("mazeDisplay").style["border-top"] = "none";
+            document.getElementById("mazeDisplay").style["border-right"] = "none";
+            break;
+
+        case "6":
+            document.getElementById("mazeDisplay").style["border-bottom"] = "none";
+            document.getElementById("mazeDisplay").style["border-left"] = "none";
+            break;
+
+        case "5":
+            document.getElementById("mazeDisplay").style["border-bottom"] = "none";
+            document.getElementById("mazeDisplay").style["border-right"] = "none";
+            break;
+
+        case "4":
+            document.getElementById("mazeDisplay").style["border-top"] = "none";
+            break;
+
+        case "3":
+            document.getElementById("mazeDisplay").style["border-bottom"] = "none";
+            break;
+
+        case "2":
+            document.getElementById("mazeDisplay").style["border-left"] = "none";
+            break;
+
+        case "1":
+            document.getElementById("mazeDisplay").style["border-right"] = "none";
+            break;
+    }   
+
 }
 
-/*
+function gameMovement()
+{
+    
+}
