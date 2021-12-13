@@ -16,12 +16,16 @@ h1
     color: green;
 }
 
+p
+{
+    font-size: 2vh;
+    background-color: lightgray;
+}
 #Menu
 {
     border: 2px black;
     display: flex;
     justify-content: center;
-    padding: 5em;
     flex-wrap: wrap;
 }
 
@@ -30,18 +34,16 @@ h1
     display: block;
     position: absolute;
     right: 0%;
-    padding: 2em;
+    padding-top: 15vh;
+    padding-right: 1vh;
 }
 
 #mazeDisplay
 {
     display: flex;
-    border: 2px white;
     justify-content: center;
-    padding: 5vh;
-    background-color: grey;
-    width: 50vh;
-    height: 50vh;    
+    width: 40vh;
+    height: 40vh;    
     background-image: url(https://us.123rf.com/450wm/pzaxe/pzaxe1204/pzaxe120400020/13043401-seamless-square-texture-wooden-floor.jpg?ver=6);
     background-size: 50%;
 }
@@ -49,6 +51,7 @@ h1
 
 #StartButton
 {
+    padding-bottom: 2vh;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -99,7 +102,10 @@ input[type=button]
     text-decoration: none;
 }
 
-.dropdown-content a:hover {background-color: darkgreen;}
+.dropdown-content a:hover
+{
+    background-color: darkgreen;
+}
 
 .dropdown:hover .dropdown-content
 {
