@@ -1,5 +1,5 @@
-var mazeWidth = 10;
-var mazeHeight = 10;
+var mazeWidth = 20;
+var mazeHeight = 20;
 
 function init()
 {
@@ -8,7 +8,7 @@ function init()
 
     paint();
 
-    beginStopwatchCycle();
+    gameDisplay();
 }
 
 function createBlankMaze()
@@ -31,12 +31,12 @@ function createBlankMaze()
             if (rowIndex == 1 && colIndex == 1 )
             {
 
-                col.style["border-top"] = "none";
+                col.style.borderTopColor = "red";
                 col.setAttribute("type", "start");
 
             } else if (rowIndex == mazeHeight && colIndex == mazeWidth)
             {
-                col.style["border-bottom"] = "none";;
+                col.style.borderBottomColor = "green"; 
                 col.setAttribute("type", "finish");
 
             }
@@ -52,7 +52,7 @@ function createBlankMaze()
     
     table.appendChild(tbody);
 
-    document.getElementById("maze_container").appendChild(table);
+    $("#maze_container").html(table);
 }
 
 function paint()
@@ -301,6 +301,16 @@ function addRoute(startAtRow, startAtCol, createDetour)
 }
 
 
+function gameDisplay()
+{
+    var DisplayRowIndex = 1;
+    var DisplayColIndex = 1;
+    var avatarPosition;
+
+    $("#maze_container" + DisplayRowIndex + "_" + DisplayColIndex).style[backgorund-color] = "red";
+}
+
+/*
 const stopwatch = document.getElementById('Stopwatch');
 
 var hr = 0;
@@ -322,7 +332,7 @@ function displayWatch()
 
 
 
-function beginStopwatchCycle()
+function StopwatchCycle()
 {
     if(useStopwatch != 0)
     {
@@ -355,9 +365,9 @@ function beginStopwatchCycle()
             hr = '0' + hr;
         }
     
-        timer.innerHTML = hr + " : " + min + " : " + sec;
+        Stopwatch.innerHTML = hr + " : " + min + " : " + sec;
     
-        setTimeout("timerCycle()", 1000);
+        setTimeout("StopwatchCycle()", 1000);
     }
     
-}
+}*/
