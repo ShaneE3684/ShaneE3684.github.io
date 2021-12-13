@@ -18,37 +18,47 @@ h1
 
 #Menu
 {
+    border: 2px black;
     display: flex;
     justify-content: center;
-    padding: 2em;
-}
-
-#miniMap
-{
-
-    width: 10vh;
-    height: 10vh;
-    display: flex;
-    justify-content: right;
+    padding: 5em;
+    flex-wrap: wrap;
 }
 
 #maze_container
 {
-    display: flex;
-    justify-content: center;
+    display: block;
+    position: absolute;
+    right: 0%;
     padding: 2em;
 }
+
+#mazeDisplay
+{
+    display: flex;
+    border: 2px white;
+    justify-content: center;
+    padding: 5vh;
+    background-color: grey;
+    width: 50vh;
+    height: 50vh;    
+    background-image: url(https://us.123rf.com/450wm/pzaxe/pzaxe1204/pzaxe120400020/13043401-seamless-square-texture-wooden-floor.jpg?ver=6);
+    background-size: 50%;
+}
+
 
 #StartButton
 {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 input[type=button]
 {
     background-color: darkgreen;
     padding: 1em;
+    color: white;
 }
 
 .dropbtn
@@ -102,11 +112,11 @@ table
     margin: auto;
 }
 
-td
+#maze_container table td
 {
-    border: 3px #000000 solid;
-    width: 2vh;
-    height: 2vh;
+    border: 2px black solid;
+    width: 5px;
+    height: 5px;
     background-size: 100%;
     background-image: url(https://us.123rf.com/450wm/pzaxe/pzaxe1204/pzaxe120400020/13043401-seamless-square-texture-wooden-floor.jpg?ver=6);
 }
@@ -116,11 +126,6 @@ td
     text-align: center;
     text-shadow: black;
     font-size: xxx-large;
-}
-
-#mazeFloor
-{
-    background-image: url(https://us.123rf.com/450wm/pzaxe/pzaxe1204/pzaxe120400020/13043401-seamless-square-texture-wooden-floor.jpg?ver=6);
 }
 
 #mazeWall
