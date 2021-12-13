@@ -1,5 +1,7 @@
 var mazeWidth = 20;
 var mazeHeight = 20;
+var currentCell;
+var cellID;
 
 function init()
 {
@@ -7,6 +9,8 @@ function init()
     createBlankMaze();
 
     paint();
+
+    addCellID();
 
     gameDisplay();
 }
@@ -61,11 +65,12 @@ function paint()
     var startAtRow = 1;
     var startAtCol = 1;
 
-    var currentCell;
+    
     
     addRoute(startAtRow, startAtCol, false);
 
-    for (n = 1; n < (mazeWidth * mazeHeight) - 1; n++) {
+    for (n = 1; n < (mazeWidth * mazeHeight) - 1; n++)
+    {
 
         var currentCell = document.getElementById("cell_" + startAtRow + "_" + startAtCol);
         
@@ -300,6 +305,38 @@ function addRoute(startAtRow, startAtCol, createDetour)
 
 }
 
+function addCellID ()
+{
+    var startAtRow = 1;
+    var startAtCol = 1;
+
+    for (n = 1; n < (mazeWidth * mazeHeight) - 1; n++)
+    {
+
+        var currentCell = document.getElementById("cell_" + startAtRow + "_" + startAtCol);
+        
+        if (currentCell.getAttribute("border-top") == "true")
+        {
+
+            addRoute(startAtRow, startAtCol, true);
+
+        }
+
+        if (startAtCol == mazeWidth)
+        {
+            
+            startAtRow++;
+            startAtCol = 1;
+
+        } else
+        {
+
+            startAtCol++;
+
+        }
+
+    }
+}
 
 function gameDisplay()
 {
@@ -307,67 +344,8 @@ function gameDisplay()
     var DisplayColIndex = 1;
     var avatarPosition;
 
-    $("#maze_container" + DisplayRowIndex + "_" + DisplayColIndex).style[backgorund-color] = "red";
+    avatarPosition = $("#cell_" + DisplayRowIndex + "_" + DisplayColIndex).attr("style");
+    
 }
 
 /*
-const stopwatch = document.getElementById('Stopwatch');
-
-var hr = 0;
-var min = 0;
-var sec = 0;
-
-var useStopwatch = 1;
-
-function displayWatch()
-{
-    if(useStopwatch == 0)
-    {
-        stopwatch.style.display = "none";
-    }else
-    {
-        stopwatch.style.display = "block";
-    }
-}
-
-
-
-function StopwatchCycle()
-{
-    if(useStopwatch != 0)
-    {
-        sec = parseInt(sec);
-        min = parseInt(min);
-        hr = parseInt(hr);
-
-        sec = sec+1;
-
-        if(sec == 60)
-        {
-            min = min+1;
-            sec = 0;
-        }
-
-        if(min = 60)
-        {
-            hr = hr+1
-            min = 0;
-            sec = 0;
-        }
-
-        if (sec < 10 || sec == 0) {
-            sec = '0' + sec;
-        }
-        if (min < 10 || min == 0) {
-            min = '0' + min;
-        }
-        if (hr < 10 || hr == 0) {
-            hr = '0' + hr;
-        }
-    
-        Stopwatch.innerHTML = hr + " : " + min + " : " + sec;
-    
-        setTimeout("StopwatchCycle()", 1000);
-    }
-    
-}*/
