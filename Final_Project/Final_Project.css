@@ -5,25 +5,37 @@ html
 
 header
 {
+    position: relative;
     background-size: 100%;
-    padding: 1em;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+
+#backgroundImage
+{
+    height: 20vh;
 }
 
 h1
 {
+    padding-top: 4vh;
     position: absolute;
-    left: 25%;
-    width: auto;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-shadow: 3px 3px black;
-    font-size: 10vh;
-    text-align: center;
-    color: green;
+    font-size: 8vh;
+    color: darkgreen;
 }
 
-p
+#instructions
 {
     font-size: 2vh;
     background-color: lightgray;
+    visibility: hidden;
 }
 #Menu
 {
@@ -37,19 +49,45 @@ p
 {
     display: block;
     position: absolute;
-    right: 0%;
-    padding-top: 15vh;
-    padding-right: 1vh;
+    right: 0;
+    padding: 5%;
 }
 
 #mazeDisplay
 {
-    display: flex;
-    justify-content: center;
+    visibility: hidden;
+    display: block;
+    position: absolute;
+    left: 5%;
+    height: 40vh;
     width: 40vh;
-    height: 40vh;    
     background-image: url(https://us.123rf.com/450wm/pzaxe/pzaxe1204/pzaxe120400020/13043401-seamless-square-texture-wooden-floor.jpg?ver=6);
     background-size: 50%;
+    padding: 5%;
+}
+
+@media screen and (max-Width: 900px)
+{
+    #maze_container
+    {   
+        bottom: 5%;
+        left: 0;
+        right: 0;
+    }
+
+    #mazeDisplay
+    {
+        margin: auto;
+        left: 0;
+        right: 0;
+        height: 25vh;
+        width: 25vh;
+    }
+
+    h1
+    {
+        font-size: 7vh;
+    }
 }
 
 
@@ -61,7 +99,7 @@ p
     width: 100%;
 }
 
-input[type=button]
+input[type = button]
 {
     background-color: darkgreen;
     padding: 1em;
@@ -71,7 +109,7 @@ input[type=button]
 .dropbtn
 {
     margin:0;
-    background-color: green;
+    background-color: darkgreen;
     color: white;
     padding: 20px;
     margin-top: 2em;
@@ -125,10 +163,9 @@ table
 #maze_container table td
 {
     border: 2px black solid;
-    width: 5px;
-    height: 5px;
-    background-size: 100%;
-    background-image: url(https://us.123rf.com/450wm/pzaxe/pzaxe1204/pzaxe120400020/13043401-seamless-square-texture-wooden-floor.jpg?ver=6);
+    width: 0.1vh;
+    height: 0.1vh;
+    background-color: tan;
 }
 
 #Stopwatch
