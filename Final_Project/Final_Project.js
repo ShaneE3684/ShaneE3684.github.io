@@ -2,17 +2,18 @@ var mazeWidth = 20;
 var mazeHeight = 20;
 var currentCell;
 var cellID;
+var currentX = 1;
+var currentY = 1;
 
-function init()
+function startTheGame()
 {
-
     createBlankMaze();
 
     paint();
 
     addCellID();
 
-    gameDisplay();
+    gameDisplay(currentX,currentY);
 }
 
 function createBlankMaze()
@@ -61,12 +62,9 @@ function createBlankMaze()
 
 function paint()
 {
-
     var startAtRow = 1;
     var startAtCol = 1;
 
-    
-    
     addRoute(startAtRow, startAtCol, false);
 
     for (n = 1; n < (mazeWidth * mazeHeight) - 1; n++)
@@ -395,19 +393,29 @@ function addCellID ()
     }
 }
 
-function gameDisplay()
+function gameDisplay(DisplayRowIndex, DisplayColIndex)
 {
-    var DisplayRowIndex = 1;
-    var DisplayColIndex = 1;
+    document.getElementById("mazeDisplay").style["borderTop"] = "2vh solid";
+    document.getElementById("mazeDisplay").style["borderRight"] = "2vh solid";
+    document.getElementById("mazeDisplay").style["borderLeft"] = "2vh solid";
+    document.getElementById("mazeDisplay").style["borderBottom"] = "2vh solid";
 
     if(DisplayRowIndex == 1 && DisplayColIndex == 1)
     {
         document.getElementById("mazeDisplay").style.borderTopColor = "red";
     }
+    else
+    {
+        document.getElementById("mazeDisplay").style.borderTopColor = "black";
+    }
 
     if(DisplayRowIndex == mazeWidth && DisplayColIndex == mazeHeight)
     {
         document.getElementById("mazeDisplay").style.borderBottomColor = "green";
+    }
+    else
+    {
+        document.getElementById("mazeDisplay").style.borderBottomColor = "black";
     }
 
     var currentPosition = document.getElementById("cell_" + DisplayRowIndex + "_" + DisplayColIndex);
@@ -494,7 +502,79 @@ function gameDisplay()
 
 }
 
-function gameMovement()
+function gameMovement(e)
 {
-    
+    var key_code = e.which || e.keyCode;
+    switch (key_code)
+    {
+        case 37: //left arrow key
+            moveLeft();
+            break;
+
+        case 38: //Up arrow key
+            moveUp();
+            break;
+
+        case 39: //right arrow key
+            moveRight();
+            break;
+
+        case 40: //down arrow key
+            moveDown();
+            break;
+    }
+
+    gameDisplay(currentX, currentY);
+}
+
+function moveLeft()
+{
+    if(document.getElementById("mazeDisplay").style["borderLeft"] != "none")
+    {
+        return;
+    }
+    else
+    {
+        currentX--;
+        return currentX;
+    }
+}
+
+function moveUp()
+{
+    if(document.getElementById("mazeDisplay").style["borderTop"] != "none")
+    {
+        return;
+    }
+    else
+    {
+        currentY++;
+        return currentY;
+    }
+}
+
+function moveRight()
+{
+    if(document.getElementById("mazeDisplay").style["borderRight"] != "none")
+    {
+        return;
+    }
+    else
+    {
+        currentX++;
+        return currentX;
+    }
+}
+
+function moveDown()
+{
+    if(document.getElementById("mazeDisplay").style["borderBottom"] != "none")
+    {
+        return;
+    }
+    else
+    {
+        currentY--;
+        return currentY;
+    }
 }
