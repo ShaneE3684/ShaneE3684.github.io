@@ -5,12 +5,16 @@ html
 
 header
 {
-    background-color: black;
+    background-size: 100%;
     padding: 1em;
 }
 
 h1
 {
+    position: absolute;
+    left: 25%;
+    width: auto;
+    text-shadow: 3px 3px black;
     font-size: 10vh;
     text-align: center;
     color: green;
@@ -132,9 +136,4 @@ table
     text-align: center;
     text-shadow: black;
     font-size: xxx-large;
-}
-
-#mazeWall
-{
-    background-image: url(https://media.istockphoto.com/photos/texture-of-a-brick-wall-of-square-bricks-picture-id931400496?k=20&m=931400496&s=170667a&w=0&h=1YU-lf-_PCPc30NBcMABK2T1ZOi2d2PS4HtcsjuJHkM=);
 }
