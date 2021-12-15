@@ -1,5 +1,5 @@
-var mazeWidth = 20;
-var mazeHeight = 20;
+var mazeWidth = 10;
+var mazeHeight = 10;
 var currentCell;
 var currentX = 1;
 var currentY = 1;
@@ -541,7 +541,7 @@ function moveLeft()
     }
     else
     {
-        previousCell = document.getElementById("cell_" + currentX + "_" + currentY);
+        previousCell = document.getElementById("cell_" + currentY + "_" + currentX);
         previousCell.style.backgroundColor = "tan";
         currentX--;
         return currentX;
@@ -556,9 +556,9 @@ function moveUp()
     }
     else
     {
-        previousCell = document.getElementById("cell_" + currentX + "_" + currentY);
+        previousCell = document.getElementById("cell_" + currentY + "_" + currentX);
         previousCell.style.backgroundColor = "tan";
-        currentY++;
+        currentY--;
         return currentY;
     }
 }
@@ -571,7 +571,7 @@ function moveRight()
     }
     else
     {
-        previousCell = document.getElementById("cell_" + currentX + "_" + currentY);
+        previousCell = document.getElementById("cell_" + currentY + "_" + currentX);
         previousCell.style.backgroundColor = "tan";
         currentX++;
         return currentX;
@@ -582,13 +582,26 @@ function moveDown()
 {
     if(document.getElementById("mazeDisplay").style.borderBottom != "none")
     {
+        if(currentX == mazeWidth && currentY == mazeHeight)
+        {
+            Win()
+        }
         return currentY;
     }
     else
     {
-        previousCell = document.getElementById("cell_" + currentX + "_" + currentY);
+        previousCell = document.getElementById("cell_" + currentY + "_" + currentX);
         previousCell.style.backgroundColor = "tan";
-        currentY--;
+        currentY++;
         return currentY;
     }
+
+}
+
+function Win()
+{
+    document.getElementById("instructions").style.visibility = "hidden";
+    document.getElementById("maze_container").style.visibility = "hidden";
+    document.getElementById("mazeDisplay").style.visibility = "hidden";
+    document.getElementById("WinMessage").style.visibility = "visible";
 }
