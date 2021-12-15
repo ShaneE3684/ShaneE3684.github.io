@@ -99,11 +99,24 @@ h1
     width: 100%;
 }
 
+#WinMessage
+{
+    background-color: lightgray;
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
 input[type = button]
 {
     background-color: darkgreen;
     padding: 1em;
     color: white;
+
 }
 
 .dropbtn
