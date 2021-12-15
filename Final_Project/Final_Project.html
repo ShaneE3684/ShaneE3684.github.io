@@ -18,16 +18,22 @@
           alt = "Background Maze" width="100%" id="backgroundImage">
         </header>
 
-        <p style="text-align: center" id="instructions">Use the arrow keys to move.<br>Keep track of your position on the minimap.</p>
+        <p style="text-align: center" id="instructions">
+          Use the arrow keys to move.
+          <br>Keep track of your position on the minimap.
+          <br>The display is a larger version of each room in the Labyrinth.
+        </p>
 
         <div id = "Menu">
           <div id = "Maze_Size">
             <div class="dropdown">
                 <button class="dropbtn">Labyrinth Size</button>
                 <div class = "dropdown-content">
+                    <input type = "button" onclick = "mazewidth = 10, mazeHeight = 10;" value = "X-Small">
                     <input type = "button" onclick = "mazeWidth = 20, mazeHeight = 20;" value = "Small">
-                    <input type = "button" onclick = "mazeWidth = 40, mazeHeight = 40;" value = "Medium">
-                    <input type = "button" onclick = "mazeWidth = 60, mazeHeight = 60;" value = "Large">
+                    <input type = "button" onclick = "mazeWidth = 30, mazeHeight = 30;" value = "Medium">
+                    <input type = "button" onclick = "mazeWidth = 40, mazeHeight = 40;" value = "Large">
+                    <input type = "button" onclick = "mazeWidth = 50, mazeHeight = 50;" value = "X-Large">
                 </div>
             </div>
           </div>
@@ -69,6 +75,11 @@
         <script>
           document.getElementById("StartButton").addEventListener("click", startTheGame);
         </script>
+
+        <div id="WinMessage">
+          <h2>Congratulations! You Win!</h2>
+          <input type = "button" onclick = "location.reload();" value = "Back to Menu">
+        </div>
 
         <!--<div id="Stopwatch">
           00:00:00
